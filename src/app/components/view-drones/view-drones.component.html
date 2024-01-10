@@ -1,0 +1,29 @@
+<button class="btn btn-primary" (click)="exportToExcel()">Export to Excel</button>
+<button class="btn btn-primary" (click)="exportToPdf()">Export to PDF</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Owner's ID Card Number</th>
+      <th>Owner's Last Name</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let registration of registrations">
+      <td>{{ registration.id }}</td>
+      <td>{{ registration.ownerIdCardNumber }}</td>
+      <td>{{ registration.ownerLastName }}</td>
+      <td>{{ registration.brandName }}</td>
+      <td>{{ registration.modelId }}</td>
+      <td>
+        <button class="btn btn-primary btn-sm" (click)="onView(registration.id)">View</button>
+        <button class="btn btn-warning btn-sm" (click)="onUpdate(registration.id)">Update</button>
+        <button class="btn btn-danger btn-sm" (click)="onDelete(registration.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <div class="card">
+      <div class="card-header">
+        <h2>Registration Details</h2>
+      </div>
+      <div class="card-body">
+        <div *ngIf="registration">
+          <dl class="row">
+            <div *ngFor="let detail of registration | keyvalue" class="col-md-6">
+              <dt class="col-sm-5">{{ detail.key }}</dt>
+              <dd class="col-sm-7">{{ detail.value }}</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  
